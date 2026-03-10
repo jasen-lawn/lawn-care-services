@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasen's Lawn Service | Graham, TX | Lawn Care & Landscaping</title>
+  <meta name="description" content="Jasen's Lawn Service in Graham, TX offers professional lawn care, tree services, leaf removal, parking landscaping, new grass installation, pre/post-emergent treatments, and snow removal." />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-deep:   #1a3a2a;
+      --green-mid:    #2d6a4f;
+      --green-bright: #40916c;
+      --green-light:  #74c69d;
+      --lime:         #b7e4c7;
+      --cream:        #f8f5ef;
+      --earth:        #6b4f3a;
+      --gold:         #e9a84c;
+      --white:        #ffffff;
+      --text:         #1c2b22;
+      --muted:        #5e7568;
+      --border:       rgba(45,106,79,0.15);
+      --shadow:       0 20px 60px rgba(26,58,42,0.14);
+      --radius:       16px;
+      --radius-lg:    24px;
+      --pill:         999px;
+      --ease:         cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════
+       HEADER
+    ══════════════════════════════════ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green-deep);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.35);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .brand-icon {
+      width: 44px; height: 44px;
+      background: var(--green-bright);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .brand-text { line-height: 1.15; }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .brand-sub { font-size: 0.7rem; color: var(--green-light); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); border-color: var(--gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--pill);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f0b955, #e9a84c);
+      color: var(--green-deep);
+      box-shadow: 0 8px 24px rgba(233,168,76,0.45);
+    }
+    .btn-gold:hover { box-shadow: 0 12px 32px rgba(233,168,76,0.6); }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.45);
+      color: #ffffff;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.08); }
+
+    .btn-green {
+      background: linear-gradient(135deg, var(--green-bright), var(--green-mid));
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(64,145,108,0.4);
+    }
+    .btn-green:hover { box-shadow: 0 12px 32px rgba(64,145,108,0.55); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 22px; height: 2px;
+      background: #fff;
+      border-radius: 99px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.75rem 0 1rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { color: rgba(255,255,255,0.85); font-size: 0.92rem; }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    .hero {
+      position: relative;
+      background: var(--green-deep);
+      color: #fff;
+      padding: 5rem 0 6rem;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* animated blob background */
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      animation: blobFloat 12s ease-in-out infinite alternate;
+    }
+    .hero-blob-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(64,145,108,0.35), transparent 65%);
+      top: -200px; right: -150px;
+    }
+    .hero-blob-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(233,168,76,0.18), transparent 65%);
+      bottom: -100px; left: 0;
+      animation-duration: 16s;
+    }
+    @keyframes blobFloat {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(20px, -20px) scale(1.06); }
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(64,145,108,0.2);
+      border: 1px solid rgba(116,198,157,0.35);
+      border-radius: var(--pill);
+      padding: 0.3rem 0.85rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); opacity:1; }
+      50% { transform: scale(1.5); opacity:0.6; }
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 3.5vw + 1rem, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      font-weight: 800;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      color: rgba(220,235,225,0.82);
+      font-size: 1rem;
+      max-width: 490px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 2.2rem;
+    }
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: rgba(210,230,218,0.9);
+    }
+    .hero-feature-check {
+      width: 20px; height: 20px;
+      background: linear-gradient(135deg, var(--green-bright), var(--green-mid));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: rgba(200,220,210,0.8);
+    }
+    .hero-trust-icon {
+      font-size: 0.95rem;
+    }
+
+    /* Hero Right — card */
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(116,198,157,0.25);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content:'';
+      position:absolute; inset:0;
+      background: radial-gradient(circle at top left, rgba(64,145,108,0.15), transparent 60%);
+      pointer-events:none;
+    }
+
+    .hero-card-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green-light);
+      margin-bottom: 0.5rem;
+    }
+    .hero-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .services-list-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+    .service-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(116,198,157,0.2);
+      border-radius: 10px;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.8rem;
+      color: rgba(220,235,225,0.9);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .service-chip:hover { background: rgba(64,145,108,0.18); border-color: rgba(116,198,157,0.45); }
+    .service-chip-icon { font-size: 1rem; flex-shrink:0; }
+
+    .hero-card-cta {
+      margin-top: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(116,198,157,0.15);
+    }
+    .hero-card-phone {
+      font-size: 0.8rem;
+      color: rgba(200,220,210,0.8);
+    }
+    .hero-card-phone strong { display:block; font-size:1rem; color:#fff; }
+
+    /* ══════════════════════════════════
+       TRUST BAR
+    ══════════════════════════════════ */
+    .trust-bar {
+      background: var(--green-mid);
+      padding: 1.1rem 0;
+    }
+    .trust-bar-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem 3.5rem;
+    }
+    .trust-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .trust-bar-item span:first-child { font-size: 1.1rem; }
+
+    /* ══════════════════════════════════
+       ABOUT
+    ══════════════════════════════════ */
+    .section { padding: 5.5rem 0; }
+
+    .section-tag {
+      display: inline-flex;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: var(--pill);
+      background: #d8eee3;
+      color: var(--green-mid);
+      margin-bottom: 0.85rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+      color: var(--green-deep);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 0.96rem;
+      max-width: 580px;
+    }
+    .section-heading-center { text-align: center; margin-bottom: 3.5rem; }
+    .section-heading-center .section-subtitle { margin: 0 auto; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-text { color: var(--muted); font-size: 0.96rem; margin-bottom: 1.1rem; }
+
+    .about-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .about-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    .check-icon {
+      width: 18px; height: 18px;
+      background: var(--green-deep);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* About visual */
+    .about-visual {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 1.2rem;
+    }
+
+    .about-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #1a3a2a, #2d6a4f);
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    /* Illustrated lawn scene */
+    .lawn-scene {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding-bottom: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .scene-sky {
+      position: absolute; inset: 0 0 40% 0;
+      background: linear-gradient(180deg, #87ceeb 0%, #b8e4f7 100%);
+    }
+    .scene-sun {
+      position: absolute;
+      top: 18%; right: 18%;
+      width: 60px; height: 60px;
+      background: radial-gradient(circle, #ffe066, #f0b955);
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(240,185,85,0.5);
+    }
+    .scene-ground {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(180deg, #3d8b37, #2d6a4f);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+    .scene-house {
+      position: absolute;
+      bottom: 38%; left: 50%; transform: translateX(-50%);
+      width: 120px;
+    }
+    .house-body {
+      width: 80px; height: 55px;
+      background: #f5f0e8;
+      margin: 0 auto;
+      border-radius: 4px 4px 0 0;
+      position: relative;
+    }
+    .house-door {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 16px; height: 22px;
+      background: var(--earth);
+      border-radius: 4px 4px 0 0;
+    }
+    .house-window {
+      position: absolute; top: 10px;
+      width: 14px; height: 14px;
+      background: #87ceeb;
+      border: 2px solid #ccc;
+      border-radius: 2px;
+    }
+    .house-window.left { left: 8px; }
+    .house-window.right { right: 8px; }
+    .house-roof {
+      width: 0; height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 36px solid #8b3a1a;
+      margin: 0 auto;
+    }
+    .scene-tree {
+      position: absolute;
+      bottom: 38%;
+    }
+    .scene-tree.t1 { left: 12%; }
+    .scene-tree.t2 { right: 14%; }
+    .tree-trunk { width: 10px; height: 22px; background: var(--earth); margin: 0 auto; border-radius: 2px; }
+    .tree-top { width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-bottom: 42px solid #3d8b37; margin: 0 auto -10px; }
+    .tree-top2 { width: 0; height: 0; border-left: 17px solid transparent; border-right: 17px solid transparent; border-bottom: 35px solid #4fae40; margin: 0 auto; }
+    .scene-mower {
+      position: absolute;
+      bottom: 40%;
+      right: 25%;
+      font-size: 1.8rem;
+      animation: mow 6s linear infinite;
+    }
+    @keyframes mow { 0%,100%{right:25%} 50%{right:50%} }
+    .scene-label {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      background: rgba(26,58,42,0.9);
+      color: var(--green-light);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--pill);
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .stat-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(26,58,42,0.07);
+      border: 1px solid var(--border);
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-deep);
+      font-weight: 700;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* ══════════════════════════════════
+       SERVICES
+    ══════════════════════════════════ */
+    .services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.6rem;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+      cursor: default;
+    }
+    .service-card::after {
+      content:'';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(64,145,108,0.08), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 24px 60px rgba(26,58,42,0.14);
+      border-color: rgba(64,145,108,0.4);
+    }
+    .service-card:hover::after { opacity: 1; }
+
+    .service-icon-wrap {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 8px 20px rgba(26,58,42,0.2);
+    }
+    .service-badge {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--green-mid);
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-mid);
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 0.5rem; }
+
+    /* ══════════════════════════════════
+       WHY US
+    ══════════════════════════════════ */
+    .why-us {
+      background: var(--green-deep);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(64,145,108,0.2), transparent 65%);
+      pointer-events: none;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .why-title em { font-style: italic; color: var(--gold); }
+    .why-subtitle { color: rgba(210,230,218,0.75); font-size: 0.96rem; margin-bottom: 2rem; }
+    .why-cta { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(116,198,157,0.18);
+      border-radius: var(--radius);
+      padding: 1.3rem 1.2rem;
+      transition: background 0.25s;
+    }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-card-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .why-card-title { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .why-card-desc { font-size: 0.82rem; color: rgba(200,220,210,0.75); line-height: 1.55; }
+
+    /* ══════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════ */
+    .testimonials { background: var(--cream); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 8px 30px rgba(26,58,42,0.07);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .testimonial-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--green-light);
+      line-height: 0.5;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .testimonial-text {
+      font-size: 0.9rem;
+      color: #4a5a52;
+      line-height: 1.7;
+      margin-bottom: 1.3rem;
+    }
+    .testimonial-stars { color: #e9a84c; font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .testimonial-author { font-weight: 600; font-size: 0.9rem; color: var(--green-deep); }
+    .testimonial-location { font-size: 0.78rem; color: var(--muted); }
+
+    /* ══════════════════════════════════
+       SEASONAL CALLOUT
+    ══════════════════════════════════ */
+    .seasonal {
+      background: linear-gradient(135deg, #e8f5e0, #f0fce8);
+      border-top: 1px solid rgba(64,145,108,0.15);
+      border-bottom: 1px solid rgba(64,145,108,0.15);
+    }
+    .seasonal-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .seasonal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green-deep);
+      margin-bottom: 0.75rem;
+    }
+    .seasonal-text { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .seasonal-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .seasonal-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(45,106,79,0.1);
+      border: 1px solid rgba(45,106,79,0.2);
+      border-radius: var(--pill);
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      color: var(--green-mid);
+      font-weight: 500;
+    }
+
+    .season-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .season-card {
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      border: 1px solid transparent;
+    }
+    .season-card.spring { background: #e8f5e0; border-color: #b7d9a0; }
+    .season-card.fall   { background: #fdf0e0; border-color: #f0c882; }
+    .season-card.winter { background: #e8f0f8; border-color: #a0c0e0; }
+    .season-card.year   { background: #e8f5ec; border-color: #a0d4b0; }
+    .season-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .season-card-title { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.25rem; color: var(--green-deep); }
+    .season-card-desc { font-size: 0.78rem; color: var(--muted); }
+
+    /* ══════════════════════════════════
+       ARTICLE / TIPS
+    ══════════════════════════════════ */
+    .article-section { background: var(--white); }
+    .article-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.8rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .article-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--green-mid);
+      margin-bottom: 0.4rem;
+    }
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+    .article-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .article-body p { font-size: 0.94rem; color: #4a5a52; margin-bottom: 0.85rem; line-height: 1.75; }
+    .article-body p strong { color: var(--green-deep); }
+    .article-body a { color: var(--green-mid); text-decoration: underline; }
+
+    /* ══════════════════════════════════
+       CONTACT
+    ══════════════════════════════════ */
+    .contact-section {
+      background: #0e2018;
+      color: #e5ede8;
+      padding: 5rem 0 0;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      align-items: stretch;
+      margin-bottom: 3rem;
+    }
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }
+    .contact-subtitle { color: rgba(200,220,210,0.75); font-size: 0.95rem; margin-bottom: 1.8rem; }
+
+    .contact-info dt {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green-light);
+      margin-top: 1rem;
+    }
+    .contact-info dd { color: rgba(220,235,225,0.85); font-size: 0.92rem; margin: 0.15rem 0 0; }
+    .contact-info a { color: rgba(220,235,225,0.85); }
+    .contact-info a:hover { color: var(--gold); }
+
+    .hours-table {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.25rem 1.5rem;
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+    }
+    .hours-day { color: rgba(200,220,210,0.7); }
+    .hours-time { color: rgba(220,235,225,0.85); }
+
+    .contact-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.8rem;
+    }
+
+    .map-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(116,198,157,0.2);
+    }
+    .map-wrapper iframe {
+      width: 100%; min-height: 380px; height: 100%;
+      border: 0; display: block;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid rgba(116,198,157,0.15);
+      padding: 1.3rem 0;
+      margin-top: 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: rgba(180,200,188,0.65);
+    }
+    .footer-inner a { color: rgba(180,200,188,0.65); }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width: 960px) {
+      .hero-inner,
+      .about-grid,
+      .why-grid,
+      .seasonal-inner,
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .services-grid,
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .hero-inner .hero-card { margin-top: 1.5rem; }
+      .map-wrapper iframe { min-height: 280px; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .services-grid,
+      .testimonials-grid,
+      .season-cards,
+      .why-cards { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .services-list-hero { grid-template-columns: 1fr; }
+      .article-inner { padding: 1.5rem 1.2rem; }
+      .hero { padding: 3.5rem 0 4rem; }
+      .section { padding: 3.5rem 0; }
+      .about-checklist { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 430px) {
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 2.1rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LandscapingBusiness",
+    "name": "Jasen's Lawn Service",
+    "telephone": "(940) 456-6070",
+    "email": "Jasen6070@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1444 Ave D",
+      "addressLocality": "Graham",
+      "addressRegion": "TX",
+      "postalCode": "76450",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="#top" class="nav-brand">
+        <div class="brand-icon">🌿</div>
+        <div class="brand-text">
+          <div class="brand-name">Jasen's Lawn Service</div>
+          <div class="brand-sub">Graham, TX · Est. Locally Trusted</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#seasonal">Seasonal</a>
+        <a href="#tips">Lawn Tips</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="tel:9404566070" class="btn btn-gold">Free Estimate</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#seasonal">Seasonal</a>
+      <a href="#tips">Lawn Tips</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:9404566070" class="btn btn-gold" style="align-self:flex-start;">Call (940) 456-6070</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section id="top" class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-left reveal">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          Graham, TX &nbsp;·&nbsp; Local Lawn Experts
+        </div>
+        <h1 class="hero-title">
+          Your Yard, <em>Perfectly</em><br />Maintained — All Year
+        </h1>
+        <p class="hero-subtitle">
+          Jasen's Lawn Service brings professional <a href="https://maps.app.goo.gl/eGcXPaXEPihaZL3x7" target="_blank">lawn care</a>
+, tree work, and landscaping to Graham, TX and surrounding areas. From lush new grass to snow removal — we handle it all.
+        </p>
+
+        <div class="hero-features">
+          <div class="hero-feature">
+            <span class="hero-feature-check">✓</span>
+            Locally owned &amp; operated in Graham, TX
+          </div>
+          <div class="hero-feature">
+            <span class="hero-feature-check">✓</span>
+            Full-service lawn care from spring to winter
+          </div>
+          <div class="hero-feature">
+            <span class="hero-feature-check">✓</span>
+            Free estimates — no pressure, no hassle
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="tel:9404566070" class="btn btn-gold">📞 Call for Free Estimate</a>
+          <a href="#services" class="btn btn-outline-white">View Services</a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="hero-trust-item">
+            <span class="hero-trust-icon">⭐</span>
+            5-Star Local Reputation
+          </span>
+          <span class="hero-trust-item">
+            <span class="hero-trust-icon">📍</span>
+            Serving Graham &amp; Surrounding Areas
+          </span>
+          <span class="hero-trust-item">
+            <span class="hero-trust-icon">🗓️</span>
+            Mon–Sat, 8am–5pm
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-right reveal" style="transition-delay:.18s">
+        <div class="hero-card">
+          <div class="hero-card-label">Our Services At a Glance</div>
+          <div class="hero-card-title">Everything Your Lawn Needs</div>
+          <div class="services-list-hero">
+            <div class="service-chip"><span class="service-chip-icon">🌱</span> Lawn Care</div>
+            <div class="service-chip"><span class="service-chip-icon">🌳</span> Tree Services</div>
+            <div class="service-chip"><span class="service-chip-icon">🍂</span> Leaf Removal</div>
+            <div class="service-chip"><span class="service-chip-icon">🅿️</span> Parking Landscaping</div>
+            <div class="service-chip"><span class="service-chip-icon">🌾</span> New Grass Installation</div>
+            <div class="service-chip"><span class="service-chip-icon">🌿</span> Pre/Post Emergent</div>
+            <div class="service-chip"><span class="service-chip-icon">❄️</span> Snow Removal</div>
+            <div class="service-chip"><span class="service-chip-icon">📞</span> Free Estimates</div>
+          </div>
+          <div class="hero-card-cta">
+            <a href="tel:9404566070" class="btn btn-green">Call Now</a>
+            <div class="hero-card-phone">
+              Reach us anytime during hours<br />
+              <strong>(940) 456-6070</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-bar-item"><span>🏡</span> Residential &amp; Commercial</div>
+      <div class="trust-bar-item"><span>📋</span> Free Estimates</div>
+      <div class="trust-bar-item"><span>⭐</span> 5-Star Rated</div>
+      <div class="trust-bar-item"><span>📍</span> Graham, TX Based</div>
+      <div class="trust-bar-item"><span>🗓️</span> Mon–Sat 8am–5pm</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="section-tag">About Jasen's Lawn Service</span>
+      <h2 class="section-title">Trusted Lawn Care Right Here in Graham, TX</h2>
+      <p class="about-text">
+        Jasen's Lawn Service is a locally owned and operated lawn and landscaping company serving Graham, Texas and the surrounding communities. We take pride in delivering professional results with a personal touch — because your yard is the first thing people see.
+      </p>
+      <p class="about-text">
+        Whether it's routine weekly lawn maintenance, a full sod installation, weed prevention treatments, or clearing snow in winter — our experienced team shows up on time, does the job right, and leaves your property looking its best.
+      </p>
+
+      <ul class="about-checklist">
+        <li class="about-check-item"><span class="check-icon">✓</span> Reliable, on-time scheduling</li>
+        <li class="about-check-item"><span class="check-icon">✓</span> Residential &amp; commercial clients</li>
+        <li class="about-check-item"><span class="check-icon">✓</span> Seasonal service packages</li>
+        <li class="about-check-item"><span class="check-icon">✓</span> Honest, transparent pricing</li>
+        <li class="about-check-item"><span class="check-icon">✓</span> Year-round availability</li>
+        <li class="about-check-item"><span class="check-icon">✓</span> Free estimates, no obligation</li>
+      </ul>
+
+      <a href="tel:9404566070" class="btn btn-green">Get a Free Estimate Today</a>
+    </div>
+
+    <div class="about-visual reveal" style="transition-delay:.12s">
+      <div class="about-img-wrap">
+        <div class="lawn-scene">
+          <div class="scene-sky"></div>
+          <div class="scene-sun"></div>
+          <div class="scene-tree t1">
+            <div class="tree-top"></div>
+            <div class="tree-top2"></div>
+            <div class="tree-trunk"></div>
+          </div>
+          <div class="scene-tree t2">
+            <div class="tree-top"></div>
+            <div class="tree-top2"></div>
+            <div class="tree-trunk"></div>
+          </div>
+          <div class="scene-house">
+            <div class="house-roof"></div>
+            <div class="house-body">
+              <div class="house-window left"></div>
+              <div class="house-window right"></div>
+              <div class="house-door"></div>
+            </div>
+          </div>
+          <div class="scene-mower">🚜</div>
+          <div class="scene-ground"></div>
+          <div class="scene-label">Graham, TX — Lawn Care Done Right</div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Services Offered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5★</div>
+          <div class="stat-label">Customer Rating</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6 Days</div>
+          <div class="stat-label">Open Mon–Sat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services" class="section services">
+  <div class="container">
+    <div class="section-heading-center reveal">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Our Lawn &amp; Landscaping Services</h2>
+      <p class="section-subtitle">From basic maintenance to full landscape projects — Jasen's Lawn Service has the skills and equipment to keep your property looking great all year.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon-wrap">🌱</div>
+        <div class="service-badge">Most Popular</div>
+        <h3 class="service-name">Lawn Care</h3>
+        <p class="service-desc">Regular mowing, edging, trimming, and cleanup to keep your lawn healthy, neat, and green throughout the growing season.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+
+      <article class="service-card reveal" style="transition-delay:.06s">
+        <div class="service-icon-wrap">🌳</div>
+        <div class="service-badge">Professional</div>
+        <h3 class="service-name">Tree Services</h3>
+        <p class="service-desc">Tree trimming, pruning, and removal performed safely and efficiently. We keep your trees healthy and your property hazard-free.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+
+      <article class="service-card reveal" style="transition-delay:.12s">
+        <div class="service-icon-wrap">🍂</div>
+        <div class="service-badge">Seasonal</div>
+        <h3 class="service-name">Leaf Removal</h3>
+        <p class="service-desc">Fast and thorough leaf cleanup in the fall to protect your lawn from smothering and prevent mold or pest problems beneath the leaves.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+
+      <article class="service-card reveal" style="transition-delay:.18s">
+        <div class="service-icon-wrap">🅿️</div>
+        <div class="service-badge">Commercial</div>
+        <h3 class="service-name">Parking Landscaping</h3>
+        <p class="service-desc">Beautify commercial parking lots and surrounding areas with professional landscaping that creates a great first impression for your business.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+
+      <article class="service-card reveal" style="transition-delay:.24s">
+        <div class="service-icon-wrap">🌾</div>
+        <div class="service-badge">New Installs</div>
+        <h3 class="service-name">New Grass Installation</h3>
+        <p class="service-desc">Sod installation and seeding for new lawns or patchy areas. We prepare the soil properly so your new grass establishes strong roots fast.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+
+      <article class="service-card reveal" style="transition-delay:.3s">
+        <div class="service-icon-wrap">🌿</div>
+        <div class="service-badge">Weed Control</div>
+        <h3 class="service-name">Pre &amp; Post-Emergent</h3>
+        <p class="service-desc">Targeted weed control treatments applied at the right time of year to stop weeds before they sprout and eliminate existing ones effectively.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+
+      <article class="service-card reveal" style="transition-delay:.36s; grid-column: 1 / -1; max-width: 380px; margin: 0 auto;">
+        <div class="service-icon-wrap">❄️</div>
+        <div class="service-badge">Winter Service</div>
+        <h3 class="service-name">Snow Removal</h3>
+        <p class="service-desc">Reliable snow clearing for driveways, walkways, and parking areas so you can stay safe and accessible even on the coldest Texas winter days.</p>
+        <a href="tel:9404566070" class="service-link">Get Estimate →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="section why-us">
+  <div class="why-bg"></div>
+  <div class="container">
+    <div class="why-grid">
+      <div class="reveal">
+        <span class="section-tag" style="background:rgba(116,198,157,0.15); color:var(--green-light);">Why Choose Us</span>
+        <h2 class="why-title">Graham's <em>Go-To</em> Lawn &amp; Landscape Team</h2>
+        <p class="why-subtitle">We're not a big faceless company. We're your neighbors — and we care about your yard like it's our own.</p>
+        <div class="why-cta">
+          <a href="tel:9404566070" class="btn btn-gold">📞 (940) 456-6070</a>
+          <a href="mailto:Jasen6070@gmail.com" class="btn btn-outline-white">Send Email</a>
+        </div>
+      </div>
+      <div class="why-cards reveal" style="transition-delay:.15s">
+        <div class="why-card">
+          <div class="why-card-icon">🎯</div>
+          <div class="why-card-title">Attention to Detail</div>
+          <div class="why-card-desc">We don't cut corners — every edge is trimmed, every area cleaned up before we leave.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">💰</div>
+          <div class="why-card-title">Fair, Honest Pricing</div>
+          <div class="why-card-desc">Clear estimates upfront with no hidden fees. You know exactly what you're paying for.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">⏰</div>
+          <div class="why-card-title">Always On Time</div>
+          <div class="why-card-desc">We respect your schedule. When we say we'll be there, we mean it.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">📅</div>
+          <div class="why-card-title">Year-Round Service</div>
+          <div class="why-card-desc">Spring through winter, we've got a service for every season your property needs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials" class="section testimonials">
+  <div class="container">
+    <div class="section-heading-center reveal">
+      <span class="section-tag">Reviews</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Graham homeowners and businesses trust Jasen's Lawn Service to keep their properties looking great.</p>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testimonial-card reveal">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">Jasen's team completely transformed my yard. They installed new sod, cleaned up all the overgrown edges, and even did a pre-emergent treatment. It's never looked this good. Highly recommend!</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-author">Mike T.</div>
+        <div class="testimonial-location">New Grass Installation · Graham, TX</div>
+      </article>
+      <article class="testimonial-card reveal" style="transition-delay:.07s">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">Called them for leaf removal and lawn cleanup going into fall. They came out the next day, did a thorough job, and the pricing was very fair. Will definitely be using them every season.</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-author">Sandra K.</div>
+        <div class="testimonial-location">Leaf Removal · Graham, TX</div>
+      </article>
+      <article class="testimonial-card reveal" style="transition-delay:.14s">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">We hired Jasen's for our business parking lot landscaping and they knocked it out of the park. Professional crew, great communication, and the results made our building look so much more welcoming.</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-author">Robert M.</div>
+        <div class="testimonial-location">Parking Landscaping · Graham, TX</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SEASONAL ══ -->
+<section id="seasonal" class="section seasonal">
+  <div class="container">
+    <div class="seasonal-inner">
+      <div class="reveal">
+        <span class="section-tag">All-Season Care</span>
+        <h2 class="seasonal-title">We Work Every Season, So You Don't Have To</h2>
+        <p class="seasonal-text">Your lawn has different needs in spring, summer, fall, and winter. Jasen's Lawn Service provides the right service at the right time — year-round.</p>
+        <div class="seasonal-pills">
+          <span class="seasonal-pill">🌸 Spring Cleanup</span>
+          <span class="seasonal-pill">☀️ Summer Mowing</span>
+          <span class="seasonal-pill">🍂 Fall Leaf Removal</span>
+          <span class="seasonal-pill">❄️ Winter Snow Removal</span>
+        </div>
+        <a href="tel:9404566070" class="btn btn-green">Schedule Service</a>
+      </div>
+      <div class="season-cards reveal" style="transition-delay:.12s">
+        <div class="season-card spring">
+          <div class="season-card-icon">🌱</div>
+          <div class="season-card-title">Spring</div>
+          <div class="season-card-desc">New grass install, pre-emergent weed control, first mow of the season</div>
+        </div>
+        <div class="season-card" style="background:#e0f0e8; border-color:#90c8a0;">
+          <div class="season-card-icon">☀️</div>
+          <div class="season-card-title">Summer</div>
+          <div class="season-card-desc">Regular mowing, edging, tree trimming, lawn health maintenance</div>
+        </div>
+        <div class="season-card fall">
+          <div class="season-card-icon">🍂</div>
+          <div class="season-card-title">Fall</div>
+          <div class="season-card-desc">Leaf removal, post-emergent treatments, lawn winterization</div>
+        </div>
+        <div class="season-card winter">
+          <div class="season-card-icon">❄️</div>
+          <div class="season-card-title">Winter</div>
+          <div class="season-card-desc">Snow removal for driveways, walkways, and commercial lots</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARTICLE / TIPS ══ -->
+<section id="tips" class="section article-section">
+  <div class="container">
+    <div class="article-inner reveal">
+      <div class="article-label">Lawn Care Tips</div>
+      <h2 class="article-title">5 Ways to Keep Your Graham, TX Lawn Healthy All Year</h2>
+      <div class="article-meta">Advice from Jasen's Lawn Service · Serving Graham, TX &amp; surrounding areas</div>
+      <div class="article-body">
+        <p>Living in Graham, TX means dealing with hot summers, dry spells, and the occasional winter freeze. Here's what we tell every one of our customers to help their lawns stay strong through every season.</p>
+        <p><strong>1. Apply Pre-Emergent in Early Spring</strong><br />
+        Before weeds have a chance to sprout, get a pre-emergent herbicide down. This one treatment saves you weeks of post-weed frustration and keeps your lawn looking clean all season long.</p>
+        <p><strong>2. Mow at the Right Height</strong><br />
+        Don't cut more than one-third of the grass blade at a time. Cutting too short stresses the grass and invites weeds. For most Texas grasses, 3–4 inches is the sweet spot in summer heat.</p>
+        <p><strong>3. Don't Skip Fall Leaf Removal</strong><br />
+        Leaves left on the lawn through winter can smother the grass, block sunlight, and create a perfect home for pests and fungus. Schedule a cleanup in October or November before the cold sets in.</p>
+        <p><strong>4. New Sod Needs Extra Water — But Don't Overdo It</strong><br />
+        Freshly installed sod needs consistent watering for the first two to three weeks. After roots establish, scale back to avoid root rot. Proper setup makes all the difference in long-term lawn success.</p>
+        <p><strong>5. Call a Professional for Trees</strong><br />
+        Overgrown or damaged trees are a safety hazard. Regular trimming keeps trees healthy and protects your home from storm damage. This is not a DIY project — always use a trained crew with the right equipment.</p>
+        <p><strong>Ready for a better-looking yard?</strong> Call us at <a href="tel:9404566070">(940) 456-6070</a> or email <a href="mailto:Jasen6070@gmail.com">Jasen6070@gmail.com</a> for a free, no-pressure estimate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 class="contact-title">Get Your Free Lawn Estimate</h2>
+        <p class="contact-subtitle">Tell us about your property and we'll give you a straight-forward quote. No pressure, no obligation.</p>
+
+        <dl class="contact-info">
+          <dt>Phone</dt>
+          <dd><a href="tel:9404566070">(940) 456-6070</a></dd>
+
+          <dt>Email</dt>
+          <dd><a href="mailto:Jasen6070@gmail.com">Jasen6070@gmail.com</a></dd>
+
+          <dt>Address</dt>
+          <dd>1444 Ave D, Graham, TX 76450, USA</dd>
+
+          <dt>Business Hours</dt>
+          <dd>
+            <div class="hours-table">
+              <span class="hours-day">Mon – Sat</span><span class="hours-time">8:00 am – 5:00 pm</span>
+              <span class="hours-day">Sunday</span><span class="hours-time">Closed</span>
+            </div>
+          </dd>
+        </dl>
+
+        <div class="contact-cta">
+          <a href="tel:9404566070" class="btn btn-gold">📞 Call Now</a>
+          <a href="mailto:Jasen6070@gmail.com" class="btn btn-outline-white">✉️ Email Us</a>
+        </div>
+      </div>
+
+      <div class="map-wrapper reveal" style="transition-delay:.12s">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d334691.2452688168!2d-98.59494155!3d32.83201195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8653cbab8f297aa3%3A0xfd8b6d2daf6685ea!2sJasen&#39;s%20Lawn%20service!5e1!3m2!1sen!2s!4v1773075690000!5m2!1sen!2s"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>© <span id="yr"></span> Jasen's Lawn Service. All rights reserved.</div>
+        <div>Serving Graham, TX &amp; surrounding areas.</div>
+        <div><a href="tel:9404566070">(940) 456-6070</a></div>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mobile.classList.toggle('open');
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
